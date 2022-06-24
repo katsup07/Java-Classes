@@ -1,5 +1,6 @@
 import java.util.Arrays;
 
+// A queue that orders numbers from least to greatest.
 public class PriorityQueue {
     private int[] items = new int[5];
     private int count = 0;
