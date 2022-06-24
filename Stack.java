@@ -30,6 +30,25 @@ public class Stack {
         return items[count-1];
     }
 
+    public int min(){
+        int min = items[0];
+        int index = 0;
+        while(index!= count){
+            if(items[index]<min) min = items[index];
+            index++;
+        }
+        return min;
+    }
+    public int max(){
+        int max = items[0];
+        int index = 0;
+        while(index!= count){
+            if(items[index]>max) max = items[index];
+            index++;
+        }
+        return max;
+    }
+
     // Prints the array out to console
     public void printStack(){
         //Will omit zeroes
@@ -51,6 +70,5 @@ public class Stack {
     public boolean isEmpty(){
         return count == 0;
     }
-
 
 }
