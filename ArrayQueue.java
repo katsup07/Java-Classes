@@ -13,7 +13,7 @@ public class ArrayQueue {
     }
 
     // Add item to rear
-    public void enqueue(int item){
+    public void enqueue(int item){ 
         if(isFull()) throw new IllegalStateException();
         items[rear] = item;
         rear = (rear + 1) % items.length; // circular array that overwrites previous item postions that have been dequeued
@@ -21,14 +21,18 @@ public class ArrayQueue {
     }
 
     // Remove element from front
-    public int dequeue(){
+    public int dequeue(){ 
         if(isEmpty()) throw new IllegalStateException();
      
         var item = items[front]; // so item can be returned at end
-        items[front] = 0; // this is unnecessary, but it is useful when testing and debugging
+        items[front] = 0; // this is unnecessary, but it is useful when testing and debugging to have zeros represent nothing
         front = (front + 1) % items.length;// circular array that overwrites previous item postions that have been dequeued
         count--;
         return item;
+    }
+    
+    public boolean isFull(){
+        return count == items.length;
     }
 
     public int peek(){
